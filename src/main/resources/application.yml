@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Webflux-practice
+  datasource:
+    url: jdbc:postgresql://localhost:5432/practice
+    username: postgres
+    password: h@sib2211
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#  r2dbc:
+#    url: r2dbc:postgresql://localhost:5432/practice
+#    username: postgres
+#    password: h@sib2211
+#  data:
+#    r2dbc:
+#      repositories:
+#        enabled: true
+#  flyway:
+#    enabled: true
