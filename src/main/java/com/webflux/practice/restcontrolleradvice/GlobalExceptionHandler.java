@@ -1,5 +1,6 @@
 package com.webflux.practice.restcontrolleradvice;
 
+import com.webflux.practice.exception.AlreadyExistException;
 import com.webflux.practice.exception.InvalidException;
 import com.webflux.practice.exception.NotFoundException;
 import com.webflux.practice.response.Response;
@@ -20,6 +21,11 @@ public class GlobalExceptionHandler {
     public Response InvalidException(InvalidException invalidException)
     {
         return ResponseBuilder.getSuccessResponse(HttpStatus.CONFLICT,invalidException.getMessage(),null);
+    }
+    @ExceptionHandler(AlreadyExistException.class)
+    public Response AlreadyExistException(AlreadyExistException alreadyExistException)
+    {
+        return ResponseBuilder.getSuccessResponse(HttpStatus.CONFLICT,alreadyExistException.getMessage(),null);
     }
 
     @ExceptionHandler(Exception.class)
