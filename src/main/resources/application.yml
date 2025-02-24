@@ -22,5 +22,5 @@ spring:
 #    enabled: true
 # JWT Secret (base64-encoded or plain string)
 jwt:
-  secret : b5d3f4a3e2d6f4f7e8c9b4b72c0a8f1d4e2d9f6b7a1c3b9c9e4f8a2a1d6f8b6e3c5f4b3a2d8e6f3b0c5d7a6f3c2f7b6f8d3a9b4e9f7c9b1f0a8b3d5b9b4c6a7b4f2c7a5f9b6d8a0a6f3
-  expiration : 86400000 # 24 hours in milliseconds
+  secret : Y2FzYW5vYmxlLXNlY3JldC1rZXktZm9yLWp3dC1oYTUxMi1hdXRoZW50aWNhdGlvbi1zeXN0ZW0tMjAyNQ==
+  expiration : 3600000

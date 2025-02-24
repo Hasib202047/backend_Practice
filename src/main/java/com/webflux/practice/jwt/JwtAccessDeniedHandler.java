@@ -7,6 +7,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Date;
 
 @Component
 public class JwtAccessDeniedHandler implements AccessDeniedHandler {
@@ -14,6 +15,7 @@ public class JwtAccessDeniedHandler implements AccessDeniedHandler {
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException {
         response.setContentType("application/json");
         response.setStatus(HttpServletResponse.SC_FORBIDDEN); // 403
-        response.getWriter().write("{\"status\": 403, \"error\": \"Forbidden\", \"message\": \"You do not have permission to access this resource\"}");
+        String jsonResponse = String.format("{\"timestamp\": %d, \"statusCode\": %d, \"status\": \"Forbidden\", \"message\": \"You do not have permission to access this resource\"}", new Date().getTime(), HttpServletResponse.SC_FORBIDDEN);
+        response.getWriter().write(jsonResponse);
     }
 }
